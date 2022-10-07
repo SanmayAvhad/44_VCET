@@ -9,6 +9,7 @@ urlpatterns = [
    path('', views.index, name='index'),
 
 
+   path('index.html', views.index),
    path('form.html', views.form),
    path('button.html', views.button),
    path('chart.html', views.chart),
