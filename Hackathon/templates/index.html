@@ -46,11 +46,12 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Email Analyser</h3>
+                    <h3 class="text-primary"> <img src="{% static 'img/icon/hashtag.svg' %}" style="width: 20px; height: 20px;" /> Email Analyser</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        {% comment %} <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;"> {% endcomment %}
+                        <img class="rounded-circle" src="{% static 'img/user.jpg' %}" style="width: 40px; height: 40px;" />
                         <div
                             class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
                         </div>
@@ -61,19 +62,17 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i
-                            class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index.html" class="nav-item nav-link active"> <img class="rounded-circle" src="{% static 'img/icon/dashboard.svg' %}" style="width: 40px; height: 40px;" /> Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                                class="fa fa-laptop me-2"></i>Automate email</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><img class="rounded-circle" src="{% static 'img/icon/laptop.svg' %}" style="width: 40px; height: 40px;" />  Automate email</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="scheduleEmail.html" class="dropdown-item">Schedule email</a>
+                            <a href="Schedule.html" class="dropdown-item">Schedule email</a>
                             <!-- <a href="typography.html" class="dropdown-item">Typography</a>
                             <a href="element.html" class="dropdown-item">Other Elements</a> -->
                         </div>
                     </div>
-                    <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Advanced insights</a>
-
+                    <a href="OpenAi.html" class="nav-item nav-link"><img class="rounded-circle" src="{% static 'img/icon/user-insights.svg' %}" style="width: 40px; height: 40px;" /> Advanced insights</a>
+                    
                 </div>
             </nav>
         </div>
@@ -84,8 +83,13 @@
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
-                
-                
+                <a href="#" class="sidebar-toggler flex-shrink-0">
+                    {% comment %} <i class="fa fa-bars"></i> {% endcomment %}
+                    <img class="rounded-circle" src="{% static 'img/icon/three.svg' %}" style="width: 40px; height: 40px;" />
+                </a>
+                <form class="d-none d-md-flex ms-4">
+                    <input class="form-control border-0" type="search" placeholder="Search">
+                </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
 
@@ -132,7 +136,7 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
+                            <img class="rounded-circle" src="{% static 'img/icon/notification.svg' %}" style="width: 40px; height: 40px;" />
                             <span class="d-none d-lg-inline-flex">Notificatin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -156,8 +160,7 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
-                                style="width: 40px; height: 40px;">
+                            <img class="rounded-circle" src="{% static 'img/user.jpg' %}" style="width: 40px; height: 40px;" />
                             <span class="d-none d-lg-inline-flex">User name</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -174,7 +177,9 @@
                 <div class="row g-4">
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-envelope fa-3x text-primary" aria-hidden="true"></i>
+                            <!-- <i class="fa fa-chart-line fa-3x text-primary"></i> -->
+                            {% comment %} <i class="fa fa-envelope fa-3x text-primary" aria-hidden="true"></i> {% endcomment %}
+                            <img src="{% static 'img/icon/email.svg' %}" style="width: 60px; height: 60px;" />
                             <div class="ms-3">
                                 <p class="mb-2">Emails Received</p>
                                 <h6 class="mb-0">4763</h6>
@@ -186,7 +191,7 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <!-- <i class="fa fa-chart-bar fa-3x text-primary"></i> -->
-                            <i class="fa fa-envelope fa-3x text-primary" aria-hidden="true"></i>
+                            <img src="{% static 'img/icon/email.svg' %}" style="width: 60px; height: 60px;" />
                             <div class="ms-3">
                                 <p class="mb-2">Emails sents</p>
                                 <h6 class="mb-0">680</h6>
@@ -197,7 +202,8 @@
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <!-- <i class="fa fa-chart-bar fa-3x text-primary"></i> -->
-                            <i class="fa fa-clock fa-3x text-danger"></i>
+                            {% comment %} <i class="fa fa-clock fa-3x text-danger"></i> {% endcomment %}
+                            <img src="{% static 'img/icon/clock.svg' %}" style="width: 60px; height: 60px;" />
                             <div class="ms-3">
                                 <p class="mb-2">Emails sents</p>
                                 <h6 class="mb-0">680</h6>
@@ -207,7 +213,8 @@
                     </div>
                     <div class="col-sm-6 col-xl-3">
                         <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                            <i class="fa fa-clock fa-3x text-danger"></i>
+                            {% comment %} <i class="fa fa-clock fa-3x text-danger"></i> {% endcomment %}
+                            <img src="{% static 'img/icon/clock.svg' %}" style="width: 60px; height: 60px;" />
                             <div class="ms-3">
                                 <p class="mb-2">Emails sents</p>
                                 <h6 class="mb-0">680</h6>
@@ -238,153 +245,17 @@
 
 
 
-            <!--pie charts starts  -->
-            <!-- Will do -->
-            <!--pie charts ends  -->
-
-
-
-            <!-- Widgets Start -->
+            <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
-                <div class="row g-4">
-                    <!-- <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-2">
-                                <h6 class="mb-0">Inbox</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                    style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">User name</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                    style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">User name</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center border-bottom py-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                    style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">User name</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                            <div class="d-flex align-items-center pt-3">
-                                <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt=""
-                                    style="width: 40px; height: 40px;">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 justify-content-between">
-                                        <h6 class="mb-0">User name</h6>
-                                        <small>15 minutes ago</small>
-                                    </div>
-                                    <span>Short message goes here...</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-sm-12 col-md-6 col-xl-4">
-                        <div class="h-100 bg-light rounded p-4">
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Calender</h6>
-                                <a href="">Show All</a>
-                            </div>
-                            <div id="calender"></div>
-                        </div>
-                    </div> -->
-
-                    <!-- these -->
-                    <div class="col-sm-12 col-md-8 col-xl-6">
-                        <div class="h-100 bg-light rounded p-4">
-
-                            <!-- ----------ifjgjg gkjig  -->
-                            <div class="d-flex align-items-center justify-content-between mb-4">
-                                <h6 class="mb-0">Schedule emails</h6>
-                                <a href="">Show All</a>
-                            </div>
-
-                            <div class="d-flex mb-2">
-                                <input class="form-control bg-transparent" type="text" placeholder="Enter email">
-                                <input class="form-control bg-transparent mx-2" type="text" placeholder="Enter Message">
-                                <button type="button" class="btn btn-primary ms-2">Add</button>
-                            </div>
-
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox" checked>
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span><del>Short task goes here...</del></span>
-                                        <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center border-bottom py-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="d-flex align-items-center pt-2">
-                                <input class="form-check-input m-0" type="checkbox">
-                                <div class="w-100 ms-3">
-                                    <div class="d-flex w-100 align-items-center justify-content-between">
-                                        <span>Short task goes here...</span>
-                                        <button class="btn btn-sm"><i class="fa fa-times"></i></button>
-                                    </div>
-                                </div>
-                            </div>
-
+                <div class="bg-light rounded-top p-4">
+                    <div class="row">
+                        <div class="col-12 col-sm-6 text-center text-sm-start">
+                            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
                         </div>
                     </div>
-
-                    <!-- These -->
                 </div>
             </div>
-            <!-- Widgets End -->
-
-
-
+            <!-- Footer End -->
         </div>
         <!-- Content End -->
 
