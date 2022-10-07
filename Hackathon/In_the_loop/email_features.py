@@ -16,32 +16,33 @@ def receive_emails():
 
 def openAI(title):
 
-    openai.api_key ="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"
+    # openai.api_key ="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"
 
 
-    response = openai.Completion.create(
-    model="text-davinci-002",
-    prompt=f"Email for {title}",
-    temperature=0.7,
-    max_tokens=256,
-    top_p=1,
-    frequency_penalty=0,
-    presence_penalty=0
-    )
-    print(response['choices'][0]['text']) 
+    # response = openai.Completion.create(
+    # model="text-davinci-002",
+    # prompt=f"Email for {title}",
+    # temperature=0.7,
+    # max_tokens=256,
+    # top_p=1,
+    # frequency_penalty=0,
+    # presence_penalty=0
+    # )
+    # print(response['choices'][0]['text']) 
 
-    return response['choices'][0]['text']
+    # return response['choices'][0]['text']
+    return "OPENAI FUnction is working"
 
 
-def SendEmail():
+def SendEmail(sender_email, receiver_email, body):
 
     ## FILE TO SEND AND ITS PATH
     filename = 'some_file.csv'
     SourcePathName  = 'C:/reports/' + filename 
 
     msg = MIMEMultipart()
-    msg['From'] = 'jatintiwari123@outlook.com'
-    msg['To'] = 'akshaymetry@gmail.com'
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
     msg['Subject'] = 'Report Update'
     body = 'Body of the message goes in here'
     msg.attach(MIMEText(body, 'plain'))
