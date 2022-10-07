@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from In_the_loop import email_features
 
 def index(request):
 
@@ -21,33 +22,24 @@ def Schedule(request):
     return render(request, 'Schedule.html')
 
 def OpenAi(request):
-    return render(request, 'OpenAi.html')
+
+    if request.method == 'POST':
+        MyDict=request.POST
+        print(MyDict)
+
+        MyDict=dict(MyDict.lists()) 
+        print(MyDict)
+        title = MyDict["Title"]
+        print(title[0])
+        title = email_features.openAI(title[0]) #calling the funciton with title parameter
+        email_body = { 
+            'title' : title
+        }
+        return render(request, 'OpenAi.html', email_body) #If something enters then this 
+    return render(request, 'OpenAi.html') #Or otherwise this will print
 
 def chart(request):
     return render(request, 'chart.html')
 
-def element(request):
-    return render(request, 'element.html')
-
-def form(request):
-    return render(request, 'form.html')
-
-def signin(request):
-    return render(request, 'signin.html')
-
-def signup(request):
-    return render(request, 'signup.html')
-
-def typography(request):
-    return render(request, 'typography.html')
-
-def widget(request):
-    return render(request, 'widget.html')
-
-def blank(request):
-    return render(request, 'blank.html')
-
-def table(request):
-    return render(request, 'table.html')
 
 
