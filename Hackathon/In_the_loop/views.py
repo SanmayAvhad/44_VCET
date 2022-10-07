@@ -17,8 +17,11 @@ def index(request):
     return render(request, 'index.html')
 
 
-def button(request):
-    return render(request, 'button.html')
+def Schedule(request):
+    return render(request, 'Schedule.html')
+
+def OpenAi(request):
+    return render(request, 'OpenAi.html')
 
 def chart(request):
     return render(request, 'chart.html')

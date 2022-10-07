@@ -11,7 +11,8 @@ urlpatterns = [
 
    path('index.html', views.index),
    path('form.html', views.form),
-   path('button.html', views.button),
+   path('Schedule.html', views.Schedule),
+   path('OpenAi.html', views.OpenAi),
    path('chart.html', views.chart),
    path('element.html', views.element),
    path('signin.html', views.signin),
