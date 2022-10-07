@@ -12,18 +12,16 @@ def receive_emails():
 
     pass
 
-# receive_emails()
 
 
-def openAI():
+def openAI(title):
 
-    openai.api_key ="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"
+    openai.api_key ="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"
 
-    search  = input("Email for : ")
 
     response = openai.Completion.create(
     model="text-davinci-002",
-    prompt=f"Email for {search}",
+    prompt=f"Email for {title}",
     temperature=0.7,
     max_tokens=256,
     top_p=1,
@@ -31,6 +29,8 @@ def openAI():
     presence_penalty=0
     )
     print(response['choices'][0]['text']) 
+
+    return response['choices'][0]['text']
 
 
 def SendEmail():
@@ -69,8 +69,4 @@ def SendEmail():
         print("Error")
         server.quit()
 
-
-
-
-SendEmail()
 

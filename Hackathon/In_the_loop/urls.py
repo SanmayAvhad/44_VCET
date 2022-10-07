@@ -7,18 +7,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.index, name='index')
    path('', views.index, name='index'),
-
-
+   
    path('index.html', views.index),
-   path('form.html', views.form),
    path('Schedule.html', views.Schedule),
    path('OpenAi.html', views.OpenAi),
    path('chart.html', views.chart),
-   path('element.html', views.element),
-   path('signin.html', views.signin),
-   path('signup.html', views.signup),
-   path('table.html', views.table),
-   path('blank.html', views.blank), 
-   path('typography.html', views.typography),
-   path('widget.html', views.widget),
+
 ]
