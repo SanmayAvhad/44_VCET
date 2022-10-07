@@ -8,10 +8,16 @@ from email.mime.text import MIMEText
 from email import encoders
 
 
+def receive_emails():
+
+    pass
+
+# receive_emails()
+
 
 def openAI():
 
-    openai.api_key ="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"
+    openai.api_key ="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"
 
     search  = input("Email for : ")
 
@@ -65,4 +71,6 @@ def SendEmail():
 
 
 
+
+SendEmail()
 
