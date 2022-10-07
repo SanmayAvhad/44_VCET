@@ -1,7 +1,21 @@
 from django.shortcuts import render
 
 def index(request):
+
+    print(request.GET)
+    print("MY namme is jatin")
+
+    context = {
+        "first_name": "Jatin",
+        "last_name": "Tiwari",
+        "address": "Mumbai, India"
+    }
+           
+    return render(request, 'index.html', context)
+
+def index(request):
     return render(request, 'index.html')
+
 
 def button(request):
     return render(request, 'button.html')
