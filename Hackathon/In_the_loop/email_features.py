@@ -9,9 +9,7 @@ from email import encoders
 
 
 def receive_emails():
-
     pass
-
 
 
 def openAI(title):
