@@ -17,7 +17,7 @@ def Send_Email(email,message):
     SourcePathName  = 'C:/reports/' + filename 
 
     msg = MIMEMultipart()
-    msg['From'] = 'akshaymetry123@outlook.com'
+    msg['From'] = 'jatintiwari123@outlook.com'
     msg['To'] = email
     msg['Subject'] = 'Report Update'
     body = message
@@ -37,7 +37,7 @@ def Send_Email(email,message):
         server.ehlo()
         server.starttls()
         server.ehlo()
-        server.login('akshaymetry123@outlook.com', 'akshay@123')  ### if applicable
+        server.login('jatintiwari123@outlook.com', 'Jatin!@#$1')  ### if applicable
         server.send_message(msg)
         server.quit()
         print("Message Sent")
@@ -56,16 +56,16 @@ def email_schedule():
     myconn = mysql.connector.connect(host = "localhost", user = "root",passwd = "",database = "email_database")  
     #printing the connection object   
     mycursor = myconn.cursor()
-    mycursor.execute("select * from email_data")
+    mycursor.execute("select email_id,message,date from email_data")
     today = datetime.datetime.today()
     date_today = today.strftime("%Y-%m-%d")
     # print(type(date_today))
     # list of data items
     result = mycursor.fetchall()
     for i in result:
-        email_id = i[1]
-        message = i[2]
-        date = str(i[3])
+        email_id = i[0]
+        message = i[1]
+        date = str(i[2])
         if date == date_today:
             # schedule.every().day.at("09:06").do(SendEmail(email_id,message))
             Send_Email(email_id,message)
@@ -75,7 +75,7 @@ def email_schedule():
     # schedule.every(2).seconds.do(SendEmail)
     
 email_schedule()
-schedule.every().day.at("12:55").do(Send_Email)
+schedule.every().day.at("13:55").do(Send_Email)
 # schedule.every(1).seconds.do(email_schedule) 
 # schedule.every().hour.do(mail)
 # schedule.every().day.at("10:30").do(email_schedule)

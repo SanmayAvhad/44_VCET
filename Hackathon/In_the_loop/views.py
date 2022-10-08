@@ -80,7 +80,7 @@ def Schedule(request):
         # print("data:",SaveDict)
         # data: {''to': [''], 'from': [''], 'title': [''], 'message': [''], 'date': [''], 'time': ['']}
         to = SaveDict["to"]
-        sender = 'akshaymetry123@outlook.com'
+        sender = 'jatintiwari123@outlook.com'
         title = SaveDict["title"]
         message = SaveDict["message"]
         date = SaveDict["date"]
