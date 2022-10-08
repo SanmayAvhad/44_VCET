@@ -204,17 +204,17 @@
                                 {% csrf_token %}
                                 <div class="mb-3">
                                   <label for="email" class="form-label">Enter Your Email</label>
-                                  <input type="email" name="user_email" value="{{user_email}}" class="form-control" id="email" aria-describedby="emailHelp">
+                                  <input type="email" name="user_email" value="jatintiwari123@outlook.com" class="form-control" id="email" aria-describedby="emailHelp">
                                 </div>
                                 <div class="mb-3">
                                   <label for="recp" class="form-label">Recipients Email</label>
-                                  <input type="text" name="receiver_email" value="jatintiwari123@outlook.com" class="form-control" id="recp">
+                                  <input type="text" name="receiver_email" value="{{user_email}}" class="form-control" id="recp">
                                   <label for="Title"  class="form-label">Title / Head</label>
                                   <input class="form-control" type="text" name="Title" value="{{title}}"  id="recp">
                                 </div>
                                 <div class="mb-3">
                                     <label for="sub" class="form-label">Body</label>
-                                    <textarea class="form-control" value="" id="sub" rows="6"> {{body}}</textarea>
+                                    <textarea class="form-control"  id="sub" rows="6"> {{body}}</textarea>
                                   </div>
                                 
                                 <button type="submit" name="auto" value="0" class="btn btn-primary">Auto Generate</button>
@@ -233,7 +233,7 @@
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">EmailAnalyser.com</a>, All Right Reserved.
+                            &copy;<h4> Make it work, Make it right, Make it fast.</h4>
                         </div>
                     </div>
                 </div>
