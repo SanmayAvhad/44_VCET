@@ -1,4 +1,3 @@
-from enum import auto
 from pickle import TRUE
 from django.shortcuts import render
 from In_the_loop import email_features
@@ -26,33 +25,36 @@ def Schedule(request):
 
 
 def OpenAi(request):
+  
 
     if request.method == 'POST':
         MyDict=request.POST
         # print(MyDict)
 
         MyDict=dict(MyDict.lists()) 
-        # print(MyDict)
+        print(MyDict)
         title = MyDict["Title"]
         # print(title)
         title =title[0]
         sender_email = MyDict["user_email"][0] 
         receiver_email = MyDict["receiver_email"][0]
+        # auto = MyDict["auto"]
+
+        # print(auto)
         
 
-        # print(receiver_email)
-
-        try:
-            auto=MyDict["auto"][0]
-            print(auto)
-            if auto == '0':
-                body = email_features.openAI(title) #calling the funciton with title parameter
+       
+        # auto=MyDict["auto"][0]
+        # print(auto)
+            
+        body = email_features.openAI(title) #calling the funciton with title parameter
                 
 
-        except: 
+        
+        message_sent = email_features.SendEmail(sender_email, receiver_email, body,title)
+        print("Email SEnt")
             
-            email_features.SendEmail(sender_email, receiver_email, body)
-
+            
         
 
 
