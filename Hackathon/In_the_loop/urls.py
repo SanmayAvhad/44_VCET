@@ -14,5 +14,6 @@ urlpatterns = [
    path('Schedule.html', views.Schedule),
    path('OpenAi.html', views.OpenAi),
    path('chart.html', views.chart),
+   path('signup',views.HandleSignup,name='HandleSignup')
 
 ]

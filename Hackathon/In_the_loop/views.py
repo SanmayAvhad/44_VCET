@@ -1,7 +1,11 @@
 from pickle import TRUE
+from pyexpat.errors import messages
 from re import I
-from django.shortcuts import render
+from django.http import HttpResponse
+from django.shortcuts import render,redirect
+from requests import post
 from In_the_loop import email_features
+from django.contrib.auth.models import User
 
 def index(request):
     print("MY namme is jatin")
@@ -82,4 +86,21 @@ def chart(request):
     return render(request, 'chart.html')
 
 
+def HandleSignup(request):
+    if request.method == 'POST':
+        Username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        fname = request.POST['fname']
+        lname = request.POST['lname']
 
+        # Create user
+        myUser = User.objects.create_user(Username,email,password)
+        myUser.fname = fname
+        myUser.lname = lname
+        myUser.save()
+        return redirect('/')
+
+    else:
+        return HttpResponse("404 Not Found")
+    
