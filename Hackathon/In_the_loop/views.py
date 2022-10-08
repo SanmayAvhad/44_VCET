@@ -1,20 +1,27 @@
 from pickle import TRUE
+from re import I
 from django.shortcuts import render
 from In_the_loop import email_features
 
 def index(request):
-
-    print(request.GET)
     print("MY namme is jatin")
+    if request.method == 'POST':
+        print(request.POST)
+        MyDict=dict(MyDict.lists()) 
+        print(MyDict)
+        sync = MyDict["sync"][0]
 
-    context = {
-        "first_name": "Jatin",
-        "last_name": "Tiwari",
-        "address": "Mumbai, India"
-    }
-           
+        if sync=='sync':
+            all_email= email_features.receive_emails()
+            print(all_email)
+
+        
+        # print(case_list[0])
+        # print(case_list[0]['key2'])
+       
     return render(request, 'index.html', context)
 
+<<<<<<< HEAD
 def signin(request):
     return render(request,'signin.html')
 
@@ -24,6 +31,8 @@ def signup(request):
 def index(request):
     return render(request, 'index.html')
 
+=======
+>>>>>>> 1f9a9ab91c9f07bdf62dc1dd9b88bed1f6322d78
 
 def Schedule(request): 
     return render(request, 'Schedule.html')
