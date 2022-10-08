@@ -23,13 +23,13 @@ def receive_emails():
     mail.select('inbox')
     status, data = mail.search(None, 'ALL')
     mail_ids = []
-    email_list=[] #for storing emails data
+    email_list = []
     print(len(mail_ids))
     for block in data:
         mail_ids += block.split()
-    print(len(mail_ids))
+    print(type(mail_ids))
     print(mail_ids)
-    for i in (mail_ids,mail_ids-N,-1):
+    for i in mail_ids:
         status, data = mail.fetch(i, '(RFC822)')
         for response_part in data:
             if isinstance(response_part, tuple):
@@ -47,18 +47,19 @@ def receive_emails():
                 print(f'From: {mail_from}')
                 print(f'Subject: {mail_subject}')
                 print(f'Content: {mail_content}')
-                email_list.append([mail_from,mail_subject,mail_content])
+                email_list.append([mail_from,mail_subject,mail_content]) 
     
-    print(email_list[0][1])
+        # print(type(email_list))
     email_list = email_list[::-1]
     # print(len(email_list))
-    case_list = []
-    for entry in email_list:
-        case = {'key1': email_list[0][1], 'key2': email_list[0][2], 'key3':email_list[0][2] }
-        case_list.append(case.copy())
-
+    # for i in email_list:
+    #     print(i)
+    # case_list = []
+    # for entry in email_list:
+    #     case = {'sender': email_list[0][0], 'subject': email_list[0][1], 'body':email_list[0][2] }
+    #     case_list.append(case.copy())
     
-    return case_list
+    return email_list
 
 
 

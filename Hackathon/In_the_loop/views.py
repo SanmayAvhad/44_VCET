@@ -4,22 +4,50 @@ from django.shortcuts import render
 from In_the_loop import email_features
 
 def index(request):
-    print("MY namme is jatin")
     if request.method == 'POST':
-        print(request.POST)
+        MyDict=request.POST
         MyDict=dict(MyDict.lists()) 
         print(MyDict)
+        print("mihihr") 
         sync = MyDict["sync"][0]
 
         if sync=='sync':
-            all_email= email_features.receive_emails()
-            print(all_email)
+            email_list= email_features.receive_emails()
+            print(email_list)
+            print(type(email_list))
+            print("mihihr")
 
+
+            email_data = {
+
+                'sender1': email_list[0][0],
+                'subject1': email_list[0][1],
+                'body1':email_list[0][2],
+
+                'sender2': email_list[1][0],
+                'subject2': email_list[1][1],
+                'body2':email_list[1][2],
+ 
+
+                'sender3': email_list[2][0],
+                'subject3': email_list[2][1],
+                'body3':email_list[2][2],
+
+                'sender5': email_list[3][0],
+                'subject5': email_list[3][1],
+                'body5':email_list[3][2],
+
+                'sender5': email_list[4][0],
+                'subject5': email_list[4][1],
+                'body5':email_list[4][2],
+
+            }
         
-        # print(case_list[0])
+            print(email_data)
         # print(case_list[0]['key2'])
        
-    return render(request, 'index.html', context)
+            return render(request, 'index.html', email_data)
+    return render(request, 'index.html') 
 
 
 def Schedule(request): 

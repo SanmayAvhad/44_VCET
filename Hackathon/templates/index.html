@@ -244,11 +244,13 @@
 
                     <div class="col-sm-14 col-md-8 col-xl-12">
                         <div class="h-100 bg-light rounded p-4">
+                            <form action="" method="post">
 
+                                {% csrf_token %}
 
                             <div class="d-flex align-items-center justify-content-between mb-4">
                                 <h6 class="mb-0">Synchronize</h6>
-                                <button type="submit" class="btn btn-primary ms-2 mb-2">Sync</button>
+                                <button type="submit" value="sync" name="sync" class="btn btn-primary ms-2 mb-2">Sync</button>
                             </div>
 
                             <div class="form">
@@ -264,27 +266,39 @@
                                     <tbody class="table-group-divider">
                                       <tr>
                                         <th scope="row">1</th>
-                                        <td>Mihirnarkar19@gmail.com</td>
-                                        <td>newContent</td>
-                                        <td>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi, tenetur!</td>
+                                        <td>{{sender1}}</td>
+                                        <td>{{subject1}}</td>
+                                        <td>{{body1}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">2</th>
-                                        <td>Jatintiwari@gmail.com</td>
-                                        <td>newContent2</td>
-                                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Aliquid cumque soluta tenetur rem facilis quos libero sint blanditiis earum praesentium dicta veniam eum, ipsam obcaecati ab reprehenderit in reiciendis tempora! Neque pariatur ut ad dolores, optio corporis tempora aliquam nam?</td>
+                                        <td>{{sender2}}</td>
+                                        <td>{{subject2}}</td>
+                                        <td>{{body2}}</td>
                                       </tr>
                                       <tr>
                                         <th scope="row">3</th>
-                                        <td>akshay@gmail.com</td>
-                                        <td>newContent3</td>
-                                        <td>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos, quas iure dolorum quasi adipisci quia soluta perspiciatis vitae tempora autem?</td>
+                                        <td>{{sender3}}</td>
+                                        <td>{{subject3}}</td>
+                                        <td>{{body3}}</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">4</th>
+                                        <td>{{sender4}}</td>
+                                        <td>{{subject4}}</td>
+                                        <td>{{body4}}</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">5</th>
+                                        <td>{{sender5}}</td>
+                                        <td>{{subject5}}</td>
+                                        <td>{{body5}}</td>
                                       </tr>
                                     </tbody>
                                   </table>
                             </div>
                             <br><br>
-
+                        </form>
                         </div>
                     </div>
 
