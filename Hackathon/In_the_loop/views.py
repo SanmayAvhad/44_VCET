@@ -21,7 +21,6 @@ def index(request):
        
     return render(request, 'index.html', context)
 
-<<<<<<< HEAD
 def signin(request):
     return render(request,'signin.html')
 
@@ -31,8 +30,6 @@ def signup(request):
 def index(request):
     return render(request, 'index.html')
 
-=======
->>>>>>> 1f9a9ab91c9f07bdf62dc1dd9b88bed1f6322d78
 
 def Schedule(request): 
     return render(request, 'Schedule.html')
