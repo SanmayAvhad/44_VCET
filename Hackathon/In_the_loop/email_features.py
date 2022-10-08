@@ -6,15 +6,70 @@ from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from email import encoders
+import email
+import imaplib
 
 
 def receive_emails():
-    pass
+
+    N= 8 #Top 8 email to fetch
+
+    EMAIL = 'jatintiwari123@outlook.com'
+    PASSWORD = 'Jatin!@#$1'
+    SERVER = 'outlook.office365.com'
+
+    mail = imaplib.IMAP4_SSL(SERVER)
+    mail.login(EMAIL, PASSWORD)
+    mail.select('inbox')
+    status, data = mail.search(None, 'ALL')
+    mail_ids = []
+    email_list=[] #for storing emails data
+    print(len(mail_ids))
+    for block in data:
+        mail_ids += block.split()
+    print(len(mail_ids))
+    print(mail_ids)
+    for i in (mail_ids,mail_ids-N,-1):
+        status, data = mail.fetch(i, '(RFC822)')
+        for response_part in data:
+            if isinstance(response_part, tuple):
+                message = email.message_from_bytes(response_part[1])
+                mail_from = message['from']
+                mail_subject = message['subject']
+                if message.is_multipart():
+                    mail_content = ''
+
+                    for part in message.get_payload():
+                        if part.get_content_type() == 'text/plain':
+                            mail_content += part.get_payload()
+                else:
+                    mail_content = message.get_payload()
+                print(f'From: {mail_from}')
+                print(f'Subject: {mail_subject}')
+                print(f'Content: {mail_content}')
+                email_list.append([mail_from,mail_subject,mail_content])
+    
+    print(email_list[0][1])
+    email_list = email_list[::-1]
+    # print(len(email_list))
+    case_list = []
+    for entry in email_list:
+        case = {'key1': email_list[0][1], 'key2': email_list[0][2], 'key3':email_list[0][2] }
+        case_list.append(case.copy())
+
+    
+    return case_list
+
+
+
+
 
 
 def openAI(title):
 
-    openai.api_key ="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"
+
+
+    openai.api_key ="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"
 
 
     response = openai.Completion.create(
@@ -67,5 +122,8 @@ def SendEmail(sender_email, receiver_email, body, title):
     except:
         print("Error")
         server.quit()
+
+
+
 
 
