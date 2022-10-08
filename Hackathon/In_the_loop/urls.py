@@ -9,7 +9,7 @@ urlpatterns = [
     # path('', views.index, name='index'),
    path('', views.signin, name='signin'),
    path('index.html',views.index),
-#    path('signin.html', views.signin),
+   path('signin.html', views.signin),
    path('signup.html', views.signup),
    path('index.html', views.index),
    path('Schedule.html', views.Schedule),
