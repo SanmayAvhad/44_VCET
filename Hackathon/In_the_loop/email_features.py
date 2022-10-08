@@ -69,7 +69,7 @@ def openAI(title):
 
 
 
-    openai.api_key ="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"
+    openai.api_key ="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"
 
 
     response = openai.Completion.create(

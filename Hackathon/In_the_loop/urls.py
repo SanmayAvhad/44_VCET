@@ -6,9 +6,10 @@ from In_the_loop import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', views.index, name='index')
-   path('', views.index, name='index'),
-   
-   path('signin.html', views.signin),
+    # path('', views.index, name='index'),
+   path('', views.signin, name='signin'),
+   path('index.html',views.index),
+#    path('signin.html', views.signin),
    path('signup.html', views.signup),
    path('index.html', views.index),
    path('Schedule.html', views.Schedule),
