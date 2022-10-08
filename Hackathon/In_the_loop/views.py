@@ -1,4 +1,6 @@
+from pickle import TRUE
 from django.shortcuts import render
+from In_the_loop import email_features
 
 def index(request):
 
@@ -17,37 +19,55 @@ def index(request):
     return render(request, 'index.html')
 
 
-def Schedule(request):
+def Schedule(request): 
     return render(request, 'Schedule.html')
 
+
+
 def OpenAi(request):
-    return render(request, 'OpenAi.html')
+  
+
+    if request.method == 'POST':
+        MyDict=request.POST
+        # print(MyDict)
+
+        MyDict=dict(MyDict.lists()) 
+        print(MyDict)
+        title = MyDict["Title"]
+        # print(title)
+        title =title[0]
+        sender_email = MyDict["user_email"][0] 
+        receiver_email = MyDict["receiver_email"][0]
+        # auto = MyDict["auto"]
+
+        # print(auto)
+        
+
+       
+        # auto=MyDict["auto"][0]
+        # print(auto)
+            
+        body = email_features.openAI(title) #calling the funciton with title parameter
+                
+
+        
+        message_sent = email_features.SendEmail(sender_email, receiver_email, body,title)
+        print("Email SEnt")
+            
+            
+        
+
+
+        email_body = { 'title' : title, 'body' : body,  'user_email': sender_email, 'receiver_email' : receiver_email, }
+
+
+        return render(request, 'OpenAi.html', email_body) #If something enters then this 
+
+
+    return render(request, 'OpenAi.html') #Or otherwise this will print
 
 def chart(request):
     return render(request, 'chart.html')
 
-def element(request):
-    return render(request, 'element.html')
-
-def form(request):
-    return render(request, 'form.html')
-
-def signin(request):
-    return render(request, 'signin.html')
-
-def signup(request):
-    return render(request, 'signup.html')
-
-def typography(request):
-    return render(request, 'typography.html')
-
-def widget(request):
-    return render(request, 'widget.html')
-
-def blank(request):
-    return render(request, 'blank.html')
-
-def table(request):
-    return render(request, 'table.html')
 
 

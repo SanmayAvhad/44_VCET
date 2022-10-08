@@ -17,11 +17,14 @@
 
     <link rel="preconnect" href="{% static 'https://fonts.googleapis.com'%}">
     <link rel="preconnect" href="{% static 'https://fonts.gstatic.com'%}" crossorigin>
-    <link rel="stylesheet" href="{% static 'https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap'%}">
+    <link rel="stylesheet"
+        href="{% static 'https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600;700&display=swap'%}">
 
 
-    <link rel="stylesheet" href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css'%}">
-    <link rel="stylesheet" href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css'%}">
+    <link rel="stylesheet"
+        href="{% static 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css'%}">
+    <link rel="stylesheet"
+        href="{% static 'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css'%}">
 
 
     <link rel="stylesheet" href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css'%}">
@@ -32,7 +35,7 @@
 
 
     <link rel="stylesheet" href="{% static 'css/style.css'%}">
-    
+
 
 
 </head>
@@ -44,11 +47,15 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-light navbar-light">
                 <a href="index.html" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>Email Analyser</h3>
+                    <h3 class="text-primary"> <img src="{% static 'img/icon/hashtag.svg' %}"
+                            style="width: 20px; height: 20px;" /> Email Analyser</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
-                        <img class="rounded-circle" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                        {% comment %} <img class="rounded-circle" src="img/user.jpg" alt=""
+                            style="width: 40px; height: 40px;"> {% endcomment %}
+                        <img class="rounded-circle" src="{% static 'img/user.jpg' %}"
+                            style="width: 40px; height: 40px;" />
                         <div
                             class="bg-success rounded-circle border border-2 border-white position-absolute end-0 bottom-0 p-1">
                         </div>
@@ -59,23 +66,28 @@
                     </div>
                 </div>
                 <div class="navbar-nav w-100">
-                    <a href="index.html" class="nav-item nav-link active"><i
-                            class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
+                    <a href="index.html" class="nav-item nav-link"> <img class="rounded-circle"
+                            src="{% static 'img/icon/dashboard.svg' %}" style="width: 40px; height: 40px;" />
+                        Dashboard</a>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                                class="fa fa-laptop me-2"></i>Automate email</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><img
+                                class="rounded-circle" src="{% static 'img/icon/laptop.svg' %}"
+                                style="width: 40px; height: 40px;" /> Automate email</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="Schedule.html" class="dropdown-item">Schedule email</a>
                             <!-- <a href="typography.html" class="dropdown-item">Typography</a>
-                            <a href="element.html" class="dropdown-item">Other Elements</a> -->
+                        <a href="element.html" class="dropdown-item">Other Elements</a> -->
                         </div>
                     </div>
-                    <a href="OpenAi.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Advanced insights</a>
-                    
+                    <a href="OpenAi.html" class="nav-item nav-link"><img class="rounded-circle"
+                            src="{% static 'img/icon/user-insights.svg' %}" style="width: 40px; height: 40px;" />
+                        Advanced insights</a>
+
                 </div>
             </nav>
         </div>
         <!-- Sidebar End -->
+
 
 
         <!-- Content Start -->
@@ -86,14 +98,16 @@
                     <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
                 </a>
                 <a href="#" class="sidebar-toggler flex-shrink-0">
-                    <i class="fa fa-bars"></i>
+                    {% comment %} <i class="fa fa-bars"></i> {% endcomment %}
+                    <img class="rounded-circle" src="{% static 'img/icon/three.svg' %}"
+                        style="width: 40px; height: 40px;" />
                 </a>
                 <form class="d-none d-md-flex ms-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
                 <div class="navbar-nav align-items-center ms-auto">
                     <div class="nav-item dropdown">
-                        
+
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">
                                 <div class="d-flex align-items-center">
@@ -137,7 +151,8 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <i class="fa fa-bell me-lg-2"></i>
+                            <img class="rounded-circle" src="{% static 'img/icon/notification.svg' %}"
+                                style="width: 40px; height: 40px;" />
                             <span class="d-none d-lg-inline-flex">Notificatin</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -161,8 +176,8 @@
                     </div>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
-                            <img class="rounded-circle me-lg-2" src="img/user.jpg" alt=""
-                                style="width: 40px; height: 40px;">
+                            <img class="rounded-circle" src="{% static 'img/user.jpg' %}"
+                                style="width: 40px; height: 40px;" />
                             <span class="d-none d-lg-inline-flex">User name</span>
                         </a>
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
@@ -176,11 +191,41 @@
             <!-- Navbar End -->
 
 
-            {% comment %} Open AI parts starts here {% endcomment %}
-            <br>
-            <center><h1>Open AI is on the way...</h1></center>
 
-            {% comment %} Open AI parts ends here {% endcomment %}
+            <div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-12 col-xl-12">
+                        <div class="bg-light rounded p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-4">
+                                <h6 class="mb-0"> <img class="rounded-circle" src="{% static 'img/icon/users.svg' %}" style="width: 30px; height: 30px;" /> Social</h6>
+                            </div>
+                            
+                            <form action="" method="post">
+                                {% csrf_token %}
+                                <div class="mb-3">
+                                  <label for="email" class="form-label">Enter Your Email</label>
+                                  <input type="email" name="user_email" value="jatintiwari123@outlook.com" class="form-control" id="email" aria-describedby="emailHelp">
+                                </div>
+                                <div class="mb-3">
+                                  <label for="recp" class="form-label">Recipients Email</label>
+                                  <input type="text" name="receiver_email" value="{{user_email}}" class="form-control" id="recp">
+                                  <label for="Title"  class="form-label">Title / Head</label>
+                                  <input class="form-control" type="text" name="Title" value="{{title}}"  id="recp">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="sub" class="form-label">Body</label>
+                                    <textarea class="form-control"  id="sub" rows="6"> {{body}}</textarea>
+                                  </div>
+                                
+                                <button type="submit" name="auto" value="0" class="btn btn-primary">Auto Generate</button>
+                                <button type="submit" name="send" value="1" class="btn btn-primary">Send</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
 
             <!-- Footer Start -->
@@ -188,7 +233,7 @@
                 <div class="bg-light rounded-top p-4">
                     <div class="row">
                         <div class="col-12 col-sm-6 text-center text-sm-start">
-                            &copy; <a href="#">Your Site Name</a>, All Right Reserved.
+                            &copy;<h4> Make it work, Make it right, Make it fast.</h4>
                         </div>
                     </div>
                 </div>
@@ -197,9 +242,6 @@
         </div>
         <!-- Content End -->
 
-
-        <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->

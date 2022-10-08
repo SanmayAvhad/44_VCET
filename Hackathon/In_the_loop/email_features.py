@@ -8,16 +8,18 @@ from email.mime.text import MIMEText
 from email import encoders
 
 
+def receive_emails():
+    pass
 
-def openAI():
 
-    openai.api_key ="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"
+def openAI(title):
 
-    search  = input("Email for : ")
+    openai.api_key ="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"
+
 
     response = openai.Completion.create(
     model="text-davinci-002",
-    prompt=f"Email for {search}",
+    prompt=f"Email for {title}",
     temperature=0.7,
     max_tokens=256,
     top_p=1,
@@ -26,27 +28,30 @@ def openAI():
     )
     print(response['choices'][0]['text']) 
 
+    return response['choices'][0]['text']
+    # return "OPENAI FUnction is working"
 
-def SendEmail():
+
+def SendEmail(sender_email, receiver_email, body, title):
 
     ## FILE TO SEND AND ITS PATH
     filename = 'some_file.csv'
     SourcePathName  = 'C:/reports/' + filename 
 
     msg = MIMEMultipart()
-    msg['From'] = 'jatintiwari123@outlook.com'
-    msg['To'] = 'akshaymetry@gmail.com'
-    msg['Subject'] = 'Report Update'
-    body = 'Body of the message goes in here'
+    msg['From'] = sender_email
+    msg['To'] = receiver_email
+    msg['Subject'] = title
+    body = body
     msg.attach(MIMEText(body, 'plain'))
 
     ## ATTACHMENT PART OF THE CODE IS HERE
-    attachment = open(r'C:\xampp\htdocs\website\Hackathons\testing codes\email.py', 'rb')
-    part = MIMEBase('application', "octet-stream")
-    part.set_payload((attachment).read())
-    encoders.encode_base64(part)
-    part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
-    msg.attach(part)
+    # attachment = open(r'C:\xampp\htdocs\website\Hackathons\testing codes\email.py', 'rb')
+    # part = MIMEBase('application', "octet-stream")
+    # part.set_payload((attachment).read())
+    # encoders.encode_base64(part)
+    # part.add_header('Content-Disposition', "attachment; filename= %s" % filename)
+    # msg.attach(part)
 
     try:
         print("Message Sending......")
@@ -62,7 +67,5 @@ def SendEmail():
     except:
         print("Error")
         server.quit()
-
-
 
 
