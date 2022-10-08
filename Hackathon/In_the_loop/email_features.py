@@ -1,24 +1,13 @@
-
 import os
 import openai
-from unittest import result
-import schedule
-import datetime
-import smtplib
-import mysql.connector  
 
-from pickle import TRUE
-from django.shortcuts import render
+import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
-<<<<<<< HEAD
-from email import encoders, message
-=======
 from email import encoders
 import email
 import imaplib
->>>>>>> 7d21bd9e4ebb7e195b35bae16345f8e33bc3697f
 
 
 def receive_emails():
@@ -135,10 +124,7 @@ def SendEmail(sender_email, receiver_email, body, title):
         print("Error")
         server.quit()
 
-<<<<<<< HEAD
-=======
 
 
 
 
->>>>>>> 7d21bd9e4ebb7e195b35bae16345f8e33bc3697f

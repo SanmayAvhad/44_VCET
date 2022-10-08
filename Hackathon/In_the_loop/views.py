@@ -1,10 +1,6 @@
 from email import message
 from pickle import TRUE
-<<<<<<< HEAD
-import mysql.connector  
-=======
-from re import I
->>>>>>> 7d21bd9e4ebb7e195b35bae16345f8e33bc3697f
+import mysql.connector 
 from django.shortcuts import render
 from In_the_loop import email_features
 
@@ -31,7 +27,7 @@ def index(request):
 
                 'sender2': email_list[1][0],
                 'subject2': email_list[1][1],
-                'body2':email_list[1][2],
+                'body2':email_list[1][2], 
  
 
                 'sender3': email_list[2][0],
