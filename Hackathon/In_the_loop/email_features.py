@@ -1,3 +1,4 @@
+from operator import length_hint
 import os
 import openai
 
@@ -24,10 +25,8 @@ def receive_emails():
     status, data = mail.search(None, 'ALL')
     mail_ids = []
     email_list = []
-    print(len(mail_ids))
     for block in data:
         mail_ids += block.split()
-    print(type(mail_ids))
     print(mail_ids)
     for i in mail_ids:
         status, data = mail.fetch(i, '(RFC822)')
@@ -59,7 +58,7 @@ def receive_emails():
     #     case = {'sender': email_list[0][0], 'subject': email_list[0][1], 'body':email_list[0][2] }
     #     case_list.append(case.copy())
     
-    return email_list
+    return (email_list, len(mail_ids))
 
 
 
@@ -70,7 +69,7 @@ def openAI(title):
 
 
 
-    openai.api_key ="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"
+    openai.api_key ="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"
 
 
     response = openai.Completion.create(

@@ -4,7 +4,9 @@ import mysql.connector
 from django.shortcuts import render
 from In_the_loop import email_features
 
+
 def index(request):
+    print("ujjval")
     if request.method == 'POST':
         MyDict=request.POST
         MyDict=dict(MyDict.lists()) 
@@ -13,13 +15,14 @@ def index(request):
         sync = MyDict["sync"][0]
 
         if sync=='sync':
-            email_list= email_features.receive_emails()
-            print(email_list)
+            email_list, mail_ids= email_features.receive_emails()
+            print(mail_ids)
             print(type(email_list))
             print("mihihr")
 
 
-            email_data = {
+            email_data = { 
+                'total_mail' :mail_ids ,
 
                 'sender1': email_list[0][0],
                 'subject1': email_list[0][1],
@@ -34,9 +37,9 @@ def index(request):
                 'subject3': email_list[2][1],
                 'body3':email_list[2][2],
 
-                'sender5': email_list[3][0],
-                'subject5': email_list[3][1],
-                'body5':email_list[3][2],
+                'sender4': email_list[3][0],
+                'subject4': email_list[3][1],
+                'body4':email_list[3][2],
 
                 'sender5': email_list[4][0],
                 'subject5': email_list[4][1],
@@ -48,7 +51,10 @@ def index(request):
         # print(case_list[0]['key2'])
        
             return render(request, 'index.html', email_data)
+    print("ujjval   .dsfsdf")
     return render(request, 'index.html') 
+
+
 
 def signin(request):
     return render(request,'signin.html')
@@ -56,8 +62,7 @@ def signin(request):
 def signup(request):
     return render(request,'signup.html')
 
-def index(request):
-    return render(request, 'index.html')
+
 
 
 def Schedule(request): 
