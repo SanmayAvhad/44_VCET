@@ -218,12 +218,29 @@
                                 <h6 class="mb-0">Schedule emails</h6>
                                 <a href="">Show All</a>
                             </div>
+                           
+                            <form action="" method="post">
+                            {% csrf_token %}
+                                <div class="form border-bottom">
+                                    <div class="d-flex mb-2">
+                                        <input class="form-control bg-transparent mx-2" type="email" name="to" placeholder="To">
+                                    </div>
+                                    <div class="d-flex mb-2">
+                                        <input class="form-control bg-transparent mx-2" type="text" name ="title" placeholder="Title">
+                                    </div>
+                                    <div class="d-flex mb-2">
+                                        <textarea class="form-control bg-transparent mx-2 " row="3" name="message"placeholder="Message"></textarea>
+                                    </div>
 
-                            <div class="form border-bottom">
-                                <div class="d-flex mb-2">
-                                    <input class="form-control bg-transparent mx-2" type="email" placeholder="To">
-                                    <input class="form-control bg-transparent mx-2" type="email" placeholder="From">
+                                    <div class="d-flex mb-2">
+                                        <input class="form-control bg-transparent mx-2" type="Date" name ="date" placeholder="Date">
+                                        <!-- <input class="form-control bg-transparent mx-2" type="time" name="time" placeholder="Time"> -->
+                                    </div>
+                                    <button type="submit" class="btn btn-primary ms-2 mb-2" value="save">Add</button>
                                 </div>
+<<<<<<< HEAD
+                            </form>
+=======
                                 <div class="d-flex mb-2">
                                     <input class="form-control bg-transparent mx-2" type="text" placeholder="Title">
                                 </div>
@@ -239,6 +256,7 @@
                                 <button type="submit" class="btn btn-primary ms-2 mb-2"
                                     onclick="submitButton()">Add</button>
                             </div>
+>>>>>>> 7d21bd9e4ebb7e195b35bae16345f8e33bc3697f
                             <br><br>
 
                             <div class="d-flex align-items-center border-bottom py-2">
