@@ -49,6 +49,15 @@ def index(request):
             return render(request, 'index.html', email_data)
     return render(request, 'index.html') 
 
+def signin(request):
+    return render(request,'signin.html')
+
+def signup(request):
+    return render(request,'signup.html')
+
+def index(request):
+    return render(request, 'index.html')
+
 
 def Schedule(request): 
     return render(request, 'Schedule.html')
