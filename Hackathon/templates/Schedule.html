@@ -185,7 +185,7 @@
                         <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
                             <a href="#" class="dropdown-item">My Profile</a>
                             <a href="#" class="dropdown-item">Settings</a>
-                            <a href="#" class="dropdown-item">Log Out</a>
+                            <a href="signin.html" class="dropdown-item">Log Out</a>
                         </div>
                     </div>
                 </div>
@@ -238,7 +238,25 @@
                                     </div>
                                     <button type="submit" class="btn btn-primary ms-2 mb-2" value="save">Add</button>
                                 </div>
+<<<<<<< HEAD
                             </form>
+=======
+                                <div class="d-flex mb-2">
+                                    <input class="form-control bg-transparent mx-2" type="text" placeholder="Title">
+                                </div>
+                                <div class="d-flex mb-2">
+                                    <textarea class="form-control bg-transparent mx-2 " row="3"
+                                        placeholder="Message"></textarea>
+                                </div>
+
+                                <div class="d-flex mb-2">
+                                    <input class="form-control bg-transparent mx-2" type="Date" placeholder="Date">
+                                    <input class="form-control bg-transparent mx-2" type="time" placeholder="Time">
+                                </div>
+                                <button type="submit" class="btn btn-primary ms-2 mb-2"
+                                    onclick="submitButton()">Add</button>
+                            </div>
+>>>>>>> 7d21bd9e4ebb7e195b35bae16345f8e33bc3697f
                             <br><br>
 
                             <div class="d-flex align-items-center border-bottom py-2">
@@ -295,7 +313,7 @@
         <!-- Content End -->
 
 
-       
+
     </div>
 
     <!-- JavaScript Libraries -->
@@ -310,6 +328,17 @@
     <script src="lib/tempusdominus/js/moment.min.js"></script>
     <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <script>
+        // const submitButton = document.getElementById("Submit");
+        // submitButton.addEventListener("click", () => {
+        //     alert("The form has been submitted");
+        //     console.log("pressed");
+        // });
+        function submitButton() {
+            alert("Email added");
+        }  
+    </script>
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
